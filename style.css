@@ -80,14 +80,11 @@ main{margin-top:60px;padding:2rem;max-width:1400px;margin-left:auto;margin-right
   margin-bottom:3.5rem;
   box-shadow:0 18px 40px rgba(0,0,0,0.6);
   background:
-    linear-gradient(rgba(8,10,16,0.78), rgba(8,10,16,0.88)),
-    url('red2.jpg') center/cover no-repeat,
-    url('rdr2.jpg') center/cover no-repeat;
-}
+    linear-gradient(rgba(8,10,16,0.78), rgba(8,10,16,0.88)),url('red2.jpg') center/cover no-repeat;
+  }
 .hero-logo {
-  position: relative; /* makes it stack above the background */
-  z-index: 2; /* above gradient layer */
-  max-width: 485px; /* adjust size as needed */
+  position: relative;
+  max-width: 485px;
   margin-bottom: 1rem;
 }
 .hero-content{max-width:900px;padding:0 1rem}
@@ -114,7 +111,7 @@ main{margin-top:60px;padding:2rem;max-width:1400px;margin-left:auto;margin-right
   box-shadow:0 8px 25px rgba(34,211,238,0.18);
   transition:transform .18s,background .18s;
 }
-.btn:hover{transform:translateY(-4px);background:rgb(149, 26, 26);box-shadow:0 12px 30px rgba(93, 18, 18, 0.915)}
+.btn:hover{transform:translateY(-4px);background:rgba(240, 4, 0, 0.968);box-shadow:0 12px 30px rgba(93, 18, 18, 0.915)}
 
 /* Sections */
 .section-title{text-align:center;font-size:2.6rem;margin:2.5rem 0;color:var(--accent)}
@@ -165,6 +162,57 @@ footer{text-align:center;padding:3rem;background:#071018;color:var(--subtle);mar
 /* Filters (fake) */
 .filter-controls{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin:2rem 0 3rem}
 .fake-select{padding:.9rem 1.4rem;background:var(--card-bg);border:1px solid rgba(255,255,255,0.03);color:var(--text);border-radius:12px;min-width:220px;position:relative}
+.dropdown {
+  position: relative;
+}
+
+.fake-select {
+  padding: .9rem 1.4rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: var(--text);
+  border-radius: 12px;
+  min-width: 220px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  list-style: none;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 10;
+}
+
+.dropdown-menu li {
+  padding: .8rem 1.2rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: background .15s;
+}
+
+.dropdown-menu li:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Show dropdown on click (CSS only trick via :focus-within) */
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 
 /* Contact form */
 .contact-main{max-width:700px;margin:3.5rem auto;padding:0 1rem}
@@ -275,6 +323,5 @@ footer{text-align:center;padding:3rem;background:#071018;color:var(--subtle);mar
     max-width: 100%;
   }
 }
-
 
 }
