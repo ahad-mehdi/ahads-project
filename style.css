@@ -232,25 +232,43 @@ footer{text-align:center;padding:3rem;background:#071018;color:var(--subtle);mar
 .small{font-size:.9rem;color:var(--subtle)}
 
 /* Phones (max-width: 480px) */
+/* UNIVERSAL MOBILE FIX FOR ALL PAGES */
+@media (max-width: 480px) {
+  body {
+    padding-top: 90px; /* adjust based on how tall your nav becomes */
+  }
+}
+
+/* YOUR MOBILE STYLES */
 @media (max-width: 480px) {
 
+  /* NAVBAR */
   nav {
     padding: 0.8rem 1rem;
-  }
-
-  .search-bar {
-    width: 140px;
-    padding: 0.5rem 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
   }
 
   .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 0.6rem;
   }
+
   .nav-links a {
     margin-left: 0.4rem;
     font-size: 0.9rem;
   }
 
+  .search-bar {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.5rem 0.8rem;
+  }
+
+  /* HERO */
   .hero {
     height: 58vh;
     min-height: 420px;
@@ -271,11 +289,13 @@ footer{text-align:center;padding:3rem;background:#071018;color:var(--subtle);mar
     max-width: 90%;
   }
 
+  /* BUTTON */
   .btn {
     padding: 0.8rem 1.6rem;
     font-size: 0.95rem;
   }
 
+  /* REVIEWS */
   .review-grid {
     grid-template-columns: 1fr;
   }
@@ -284,6 +304,7 @@ footer{text-align:center;padding:3rem;background:#071018;color:var(--subtle);mar
     height: 180px;
   }
 
+  /* ARTICLES */
   .article-hero {
     height: 180px;
   }
@@ -300,28 +321,8 @@ footer{text-align:center;padding:3rem;background:#071018;color:var(--subtle);mar
     font-size: 1.4rem;
   }
 
+  /* CONTACT */
   .contact-main {
     padding: 0 0.5rem;
   }
-  @media (max-width: 480px) {
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.8rem;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .search-bar {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
 }
