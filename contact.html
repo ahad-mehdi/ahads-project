@@ -27,11 +27,11 @@
 <main class="contact-main">
   <br>
   <h1 class="section-title">Suggest a Game!</h1>
-  <p class="center-muted">Want us to review a specific open-world adventure? Let us know!</p>
+  <p class="center-muted"><strong>Want us to review a specific open-world adventure? Let us know!</strong></p>
 
   <form class="suggest-form" action="https://formspree.io/f/xzznqerg" method="POST">
-    <input type="text" placeholder="Your Name" name="name">
-    <input type="email" placeholder="Your Email" name="email">
+    <input type="text" placeholder="Your Name" name="name" required>
+    <input type="email" placeholder="Your Email" name="email" required>
     <input type="text" placeholder="Game Title" name="game">
     <textarea placeholder="Why should we review it? (optional)" rows="5" name="reason"></textarea>
     <button type="submit" class="btn">Send Suggestion</button>
@@ -43,5 +43,3 @@
 </footer>
 </body>
 </html>
-
-
